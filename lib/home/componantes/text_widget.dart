@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../shared/global/app_colors.dart';
-import '../../shared/utils/app_assets.dart';
+import '../../shared/global/app_theme.dart';
 import '../../shared/utils/app_strings.dart';
 import '../../shared/utils/app_values.dart';
 
@@ -11,22 +9,11 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-
       children:  [
-        const Text(AppStrings.headText,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22,
-          ),
-        ),
-
-        const Text(AppStrings.bodyText,
-          style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w800,
-              color: AppColors.boldGrey
-          ),
-        ),
+         Text(AppStrings.headText,
+          style: lightTheme.textTheme.displayLarge),
+         Text(AppStrings.bodyText,
+          style: lightTheme.textTheme.headlineMedium),
         SizedBox(height: mediaQueryHeight(context)*.12,)
       ],
     );

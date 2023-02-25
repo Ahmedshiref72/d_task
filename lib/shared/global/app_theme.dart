@@ -34,8 +34,9 @@ ThemeData lightTheme = ThemeData(
   ),
     // For text form fields input
     displayLarge: TextStyle(
-      fontSize: FontSize.s20,
-      fontWeight: FontWeightManager.semiBold,
+      fontSize: FontSize.s22,
+      fontWeight: FontWeightManager.bold,
+      color: AppColors.dark
     ),
     // For description text.
     headlineSmall: TextStyle(
@@ -45,8 +46,8 @@ ThemeData lightTheme = ThemeData(
     // For buttons label
     headlineMedium: TextStyle(
       fontSize: FontSize.s16,
-      fontWeight: FontWeightManager.semiBold,
-      color: Colors.white,
+      fontWeight: FontWeightManager.medium,
+        color: AppColors.boldGrey
     ),
     // For appbar title
     headlineLarge: TextStyle(

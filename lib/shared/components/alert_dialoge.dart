@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../global/app_theme.dart';
 import '../utils/app_values.dart';
 
-class alertDialog extends StatelessWidget {
-  const alertDialog({
+class AlertDialogWidget extends StatelessWidget {
+  const AlertDialogWidget({
     required this.imageSrc,
     required this.text,
 
@@ -48,7 +48,7 @@ class alertDialog extends StatelessWidget {
                   style:  lightTheme.textTheme.titleSmall
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   TextButton(onPressed: (){Navigator.pop(context);},

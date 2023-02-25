@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:d_task/home/componantes/uploadImage_widget.dart';
 import 'package:d_task/home/presentation/controller/home_state.dart';
-import 'package:d_task/shared/global/app_colors.dart';
-import 'package:d_task/shared/utils/app_values.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../shared/components/alert_dialoge.dart';
@@ -20,29 +18,38 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit,HomeStates>(
       listener: (context,state){
+
+        //showDialog that have the image we pick
+
      if (state is PickImageSuccessState) {
           {showDialog(context: context, builder: (_) {
-                  Future.delayed(Duration(seconds: 4), () {
+                  Future.delayed(const Duration(seconds: 4), () {
                     Navigator.of(context).pop();});
-                  return  alertDialog(
+                  return  AlertDialogWidget(
                     imageSrc: File(HomeCubit.get(context).imagePath!),
                     text: AppStrings.result,
-                  );});}}
+                  );}
+          );}}
+
+     //showDialog that have the Result
+
         else  if (state is ChangeDurationEndState) {
           {showDialog(
                 context: context,
                 builder: (_) {
-                  return   const alertDialogResult(
+                  return   const AlertDialogResult(
                     imageSrc: ImageAssets.line,
                     text:
                     AppStrings.result,
                     text2:  AppStrings.bengin,
                   );});}}
+        //show toast error
         else if (state is PickImageErrorState) {
           showToast(
               text: AppStrings.tryAgain ,
               state: ToastStates.ERROR);
-        }},
+        }
+        },
       builder: (context,state){
         return  Directionality(
           textDirection: TextDirection.ltr,
@@ -53,17 +60,22 @@ class HomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  //this stack have image and text
                   Stack(
                       alignment: Alignment.bottomCenter,
                       children:  [
+                        //image
                         const Center(child: UploadImage()),
+                        //text
                         Stack(
                           alignment: Alignment.bottomLeft,
                           children: const [
-                            TextWidget(),],
+                            TextWidget(),
+                          ],
                         ),
                       ]
                   ),
+                  //upload button
                   MainButton(
                     title: AppStrings.upload,
                     onPressed: () {

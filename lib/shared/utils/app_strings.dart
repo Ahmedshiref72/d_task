@@ -12,8 +12,6 @@ class AppStrings {
       'Histopathological Image on this\n'
       ' page to see if there is a breast\n'
       '              cancer or not.';
-
-
   // Wrong routes
   static const String wrongScreen = "Wrong Screen";
   static const String routeNotFound = "Screen not found.";

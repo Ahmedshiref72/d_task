@@ -4,8 +4,8 @@ import 'package:d_task/shared/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import '../utils/app_values.dart';
 
-class alertDialogResult extends StatelessWidget {
-  const alertDialogResult({
+class AlertDialogResult extends StatelessWidget {
+  const AlertDialogResult({
     required this.imageSrc,
     required this.text,
     required this.text2,
@@ -57,15 +57,15 @@ class alertDialogResult extends StatelessWidget {
                   style: lightTheme.textTheme.titleMedium
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   TextButton(onPressed: (){Navigator.pop(context);},
                       child:  Text(
                         AppStrings.cancel,
                         style: lightTheme.textTheme.headlineLarge
-
-                      ))
+                      ),
+                  )
                 ],
               )
             ],

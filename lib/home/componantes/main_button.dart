@@ -29,8 +29,8 @@ class MainButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.cloud_upload_rounded,color: AppColors.offWhite,),
-              SizedBox(
+              const Icon(Icons.cloud_upload_rounded,color: AppColors.offWhite,),
+              const SizedBox(
                 width: 10,
               ),
               Text(title, style: Theme.of(context).textTheme.headlineMedium),

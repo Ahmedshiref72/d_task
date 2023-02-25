@@ -11,11 +11,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp();
-  //Bloc.observer = MyBlocObserver();
-  // DioHelper.init();
- // CacheHelper.init();
-
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.white,
@@ -24,16 +19,11 @@ Future<void> main() async {
     ),
   );
 
-  runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()));
+  runApp(DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  // const MyApp._internal();
-  //
-  // static const MyApp instance = MyApp._internal();
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider (

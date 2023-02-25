@@ -35,10 +35,14 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: AppColors.primary,
 
       body: Column(
         children: [
+
+          //logo 1
+
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +52,11 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
           ),
+
           SizedBox(height: mediaQueryHeight(context)*.15,),
+
+          //logo2
+
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,7 +66,6 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
           ),
-
         ],
       ),
     );

@@ -6,26 +6,20 @@ import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
   HomeCubit() : super(HomeInitialState());
-
   static HomeCubit get(context) => BlocProvider.of(context);
-
+  //image picker
   String? imagePath;
-
-
   void pickMedia() async {
     XFile? file = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (file != null) {
-
       imagePath = file.path;
-
       emit(PickImageSuccessState());
-
-
     } else  {
     emit(PickImageErrorState());
     }
   }
 
+  //counter && duration
   bool change = false;
   Duration duration = const Duration();
   void counter ()async {
@@ -41,9 +35,8 @@ class HomeCubit extends Cubit<HomeStates> {
       if (seconds < 0){
         timer?.cancel();
         emit(ChangeDurationEndState());
+        change = true;
         emit(EndDurationState());
-
-
       } else{
         emit(ChangeDurationStartState());
         duration = Duration(seconds: seconds);

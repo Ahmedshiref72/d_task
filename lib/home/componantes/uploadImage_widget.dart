@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../shared/utils/app_assets.dart';
 import '../../shared/utils/app_values.dart';
 
@@ -11,7 +10,6 @@ class UploadImage extends StatelessWidget {
     return Image.asset(
       ImageAssets.uploadImage,
       height: mediaQueryHeight(context) / AppSize.s1_5,
-
     );
   }
 }
