@@ -39,35 +39,22 @@ class _SplashScreenState extends State<SplashScreen> {
 
       body: Column(
         children: [
-
           Center(
-            child: Stack(
-              children: [
-                Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Center(child: Logo1Widget()),
-                    ],
-                  ),
-                )
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Center(child: Logo1Widget()),
               ],
             ),
           ),
           SizedBox(height: mediaQueryHeight(context)*.15,),
           Center(
-            child: Stack(
-              children: [
-                Center(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Center(child: LogoWidget()),
-                    ],
-                  ),
-                )
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Center(child: LogoWidget()),
               ],
             ),
           ),

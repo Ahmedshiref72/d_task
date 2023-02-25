@@ -1,6 +1,10 @@
 class AppStrings {
   // General
   static const String appTitle = "TASK";
+  static const String result = ": The Result Is ";
+  static const String bengin = "Bengin ";
+  static const String cancel = "Cancel";
+  static const String tryAgain = "Please Try Again";
   static const String upload = "Upload";
   static const String headText = '             Upload \n Histopathological image';
   static const String bodyText =

@@ -8,14 +8,14 @@ ThemeData lightTheme = ThemeData(
   textTheme: const TextTheme(
     // For title bold texts
    titleMedium: TextStyle(
-     fontSize: FontSize.s24,
-     color: Colors.black,
+     fontSize: FontSize.s35,
+     color: AppColors.lightGreen,
      fontWeight: FontWeightManager.bold,
    ),
     // For subtitle lightGrey texts
    titleSmall: TextStyle(
      fontSize: FontSize.s18,
-     color: AppColors.lightGrey,
+     color: AppColors.dark,
    ),
    // For text buttons
    labelMedium: TextStyle(
@@ -51,7 +51,8 @@ ThemeData lightTheme = ThemeData(
     // For appbar title
     headlineLarge: TextStyle(
       fontSize: FontSize.s22,
-      fontWeight: FontWeightManager.medium,
+      fontWeight: FontWeightManager.bold,
+      color: AppColors.red,
     ),
 
   ),
