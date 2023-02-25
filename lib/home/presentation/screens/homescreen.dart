@@ -11,34 +11,25 @@ import '../../../shared/components/toast_component.dart';
 import '../../../shared/utils/app_assets.dart';
 import '../../../shared/utils/app_strings.dart';
 import '../../componantes/main_button.dart';
+import '../../componantes/text_widget.dart';
 import '../controller/home_cubit.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HomeCubit,HomeStates>(
       listener: (context,state){
      if (state is PickImageSuccessState) {
-          {
-            showDialog(
-                context: context,
-                builder: (_) {
+          {showDialog(context: context, builder: (_) {
                   Future.delayed(Duration(seconds: 4), () {
-                    Navigator.of(context).pop();
-                  });
+                    Navigator.of(context).pop();});
                   return  alertDialog(
                     imageSrc: File(HomeCubit.get(context).imagePath!),
-                    text:
-                    AppStrings.result,
-                  );
-                });
-          }
-        }
+                    text: AppStrings.result,
+                  );});}}
         else  if (state is ChangeDurationEndState) {
-          {
-            showDialog(
+          {showDialog(
                 context: context,
                 builder: (_) {
                   return   const alertDialogResult(
@@ -46,19 +37,13 @@ class HomeScreen extends StatelessWidget {
                     text:
                     AppStrings.result,
                     text2:  AppStrings.bengin,
-                  );
-                });
-          }
-        }
+                  );});}}
         else if (state is PickImageErrorState) {
           showToast(
               text: AppStrings.tryAgain ,
               state: ToastStates.ERROR);
-        }
-
-      },
+        }},
       builder: (context,state){
-
         return  Directionality(
           textDirection: TextDirection.ltr,
           child: SafeArea(
@@ -74,32 +59,11 @@ class HomeScreen extends StatelessWidget {
                         const Center(child: UploadImage()),
                         Stack(
                           alignment: Alignment.bottomLeft,
-                          children: [
-                            Column(
-
-                              children:  [
-                                const Text(AppStrings.headText,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                  ),
-                                ),
-
-                                const Text(AppStrings.bodyText,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w800,
-                                      color: AppColors.boldGrey
-                                  ),
-                                ),
-                                SizedBox(height: mediaQueryHeight(context)*.12,)
-                              ],
-                            ),
-                          ],
+                          children: const [
+                            TextWidget(),],
                         ),
-
-
-                      ]),
+                      ]
+                  ),
                   MainButton(
                     title: AppStrings.upload,
                     onPressed: () {
@@ -113,7 +77,6 @@ class HomeScreen extends StatelessWidget {
           ),
         );
       },
-
     );
   }
 }

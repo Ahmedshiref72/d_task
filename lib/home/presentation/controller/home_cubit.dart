@@ -34,34 +34,21 @@ class HomeCubit extends Cubit<HomeStates> {
     Timer? timer;
     bool countDown =true;
     duration = countdownDuration;
-    print('start');
     emit(StartDurationState());
-    print('start1');
-    print(duration);
-    print(change);
-
     void addTime(){
       final addSeconds = countDown ? -1 : 1;
       final seconds = duration.inSeconds + addSeconds;
       if (seconds < 0){
         timer?.cancel();
         emit(ChangeDurationEndState());
-        print('change');
-        change = true;
-        print(change);
         emit(EndDurationState());
-        print('shefo');
+
 
       } else{
         emit(ChangeDurationStartState());
         duration = Duration(seconds: seconds);
-        print('duration');
-        print(duration);
-
-
       }
     }
-
     void startTimer(){
       timer = Timer.periodic(const Duration(seconds: 1),(_) => addTime());
       emit(ChangeDurationLoadingState());

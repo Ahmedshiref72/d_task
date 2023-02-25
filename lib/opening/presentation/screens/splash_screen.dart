@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-     Future.delayed(const Duration(seconds: 3), () {
+     Future.delayed( const Duration(seconds: DurationConstant.d3), () {
       {
         navigateFinalTo(context: context, screenRoute: Routes.homeScreen);
       }
